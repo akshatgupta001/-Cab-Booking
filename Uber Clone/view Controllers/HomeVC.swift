@@ -12,10 +12,11 @@ class HomeVC: UIViewController {
     @IBOutlet weak var map: MKMapView!
    
     
+    @IBOutlet weak var findCab: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let location = CLLocationCoordinate2DMake(28.708883, 77.112652)
+        let location = CLLocationCoordinate2DMake(28.750321, 77.117639)
         let span = MKCoordinateSpanMake(0.003, 0.006)
         let region = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: true)
@@ -23,6 +24,7 @@ class HomeVC: UIViewController {
         dropPin.coordinate = location
          dropPin.title = "Your Location"
         map.addAnnotation(dropPin)
+        findCab.layer.cornerRadius = findCab.bounds.height/5
         // Do any additional setup after loading the view.
     }
 
