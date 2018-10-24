@@ -10,6 +10,8 @@ import UIKit
 
 class findCabVC: UIViewController {
 
+    @IBOutlet weak var Trip: UIButton!
+    
     @IBAction func confirmBooking(_ sender: Any) {
         cabOnWay.isHidden = false
         
@@ -17,10 +19,18 @@ class findCabVC: UIViewController {
     @IBOutlet weak var cabOnWay: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func tripPressed(_ sender: Any) {
+        if  Trip.title(for: .normal) == "Start Trip"{
+            Trip.setTitle("End Trip", for: .normal)
+            cabOnWay.text = "Your ride has started."
+        }else{
+            performSegue(withIdentifier: "showPaymentVC", sender: self)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
