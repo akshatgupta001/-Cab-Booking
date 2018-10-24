@@ -10,6 +10,11 @@ import UIKit
 
 class findCabVC: UIViewController {
 
+    @IBAction func confirmBooking(_ sender: Any) {
+        cabOnWay.isHidden = false
+        
+    }
+    @IBOutlet weak var cabOnWay: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
